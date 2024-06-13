@@ -107,8 +107,9 @@ def normal_iteration(created_list, random_selection):
         if list_item == random_selection:
             end = datetime.now().microsecond
     time_delta = end - start
-    print(f'The time taken to perform this action is {time_delta} microseconds')
+    print(f'The time taken to perform normal iteration is {time_delta} microseconds')
     create_separation()
+    return time_delta
             
 
 def main():
@@ -124,6 +125,6 @@ def main():
     list = create_ordered_list(list_length)
     random_item = select_random(list)
 
-    normal_iteration(list, random_item)
+    time_delta_normal = normal_iteration(list, random_item)
 
 main()
