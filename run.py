@@ -26,6 +26,23 @@ def welcome_user():
     print('Search Methods takes a sorted string and iterates through it in two ways. A traditional looping method and binary search. It times the program during the iteration and returns the result and difference in time')
     print('Would you like to learn more about binary search? y/n')
     learn_or_play = input()
+    if learn_or_play == 'y':
+        print('Loading Instructions...')
+    elif learn_or_play == 'n':
+        print('Loading Program...')
+    else:
+        while learn_or_play != 'y' or 'n':
+            print('Please enter the character y and press enter if you would like to learn more about binary search or the character n if you would like to run the program')
+            next_input = input()
+            if next_input == 'y':
+                print('Loading Instructions...')
+                break
+            elif next_input == 'n':
+                print('Loading Program...')
+                break
+
+
+
 
 
 
