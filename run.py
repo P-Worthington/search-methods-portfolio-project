@@ -23,11 +23,13 @@ def welcome_user():
     of this program and if the user wants to use the program. 
     """
     print('\n Hello welcome to Search Methods. \n')
-    print('Search Methods takes a sorted string and iterates through it in two ways. A traditional looping method and binary search. It times the program during the iteration and returns the result and difference in time')
+    print('Search Methods takes a sorted string and iterates through it in two ways. A traditional looping method and binary search. It times the program during the iteration and returns the result and difference in time \n')
     print('Would you like to learn more about binary search? y/n')
+    print('*Recommended if this is your first time using the program* \n')
     learn_or_play = input()
     if learn_or_play == 'y':
         print('Loading Instructions...')
+        instructions()
     elif learn_or_play == 'n':
         print('Loading Program...')
     else:
@@ -36,17 +38,22 @@ def welcome_user():
             next_input = input()
             if next_input == 'y':
                 print('Loading Instructions...')
+                instructions()
                 break
             elif next_input == 'n':
                 print('Loading Program...')
                 break
 
-
-
-
-
-
-
-
+def instructions():
+    """
+    Function to teach the user about bianry searches and the program itself 
+    will lead the user onto running the program and direct them to the readme file 
+    if they want to learn further
+    """
+    i = 1
+    while i < 4:
+        print("...............................................................")
+        i += 1
+    print('Instructions')
 
 welcome_user()
