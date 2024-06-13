@@ -1,7 +1,7 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-
+import random
 
 def create_ordered_list(list_length_request):
     """
@@ -88,6 +88,13 @@ def create_separation():
         print("...............................................................")
         i += 1
 
+def select_random(x):
+    start = x[0]
+    end = x[-1]
+    random_list_item = random.randint(start, end)
+    return random_list_item
+
+
 def main():
     """
     Main function used for the running of the program
@@ -99,5 +106,8 @@ def main():
         instructions()
         list_length = get_list_length()
     list = create_ordered_list(list_length)
+    random_item = select_random(list)
+    print(random_item)
 
 main()
+
