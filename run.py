@@ -15,8 +15,6 @@ def create_ordered_list(list_length_request):
         i += 1
     return ordered_list
 
-create_ordered_list(1000000)
-
 def welcome_user():
     """
     Function to run first on the console and welcome the user a quesiton is 
@@ -33,7 +31,7 @@ def welcome_user():
         instructions()
     elif learn_or_play == 'n':
         print('Loading Program...')
-        run_program():
+        run_program()
     else:
         while learn_or_play != 'y' or 'n':
             print('Please enter the character y and press enter if you would like to learn more about binary search or the character n if you would like to run the program')
@@ -44,7 +42,7 @@ def welcome_user():
                 break
             elif next_input == 'n':
                 print('Loading Program...')
-                run_program():
+                run_program()
                 break
 
 def instructions():
@@ -60,6 +58,10 @@ def instructions():
     print('Instructions')
 
 def run_program():
-    Print('Please input a list length number between 100 (one hundred) and 1000000 (one million)')
+    print('Please input a list length number between 100 (one hundred) and 1000000 (one million)')
+    list_request = input()
+    list_request_num = int(list_request)
+    if list_request_num >= 100 and list_request_num <= 100000:
+        print(f'You entered {list_request_num}')
 
-#welcome_user()
+welcome_user()
