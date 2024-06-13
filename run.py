@@ -23,9 +23,8 @@ def welcome_user():
     of this program and if the user wants to use the program. 
     """
     print('\n Hello welcome to Search Methods. \n')
-    print('Search Methods takes a sorted string and iterates through it in two ways. A traditional looping method and binary search. It times the program during the iteration and returns the result and difference in time \n')
-    print('Would you like to learn more about binary search? y/n')
-    print('*Recommended if this is your first time using the program* \n')
+    print('If this is your first time using Search Methods it is recommended that you read the instructions. \n')
+    print('Would you like to read the instructions? y/n')
     learn_or_play = input()
     if learn_or_play == 'y':
         print('Loading Instructions...')
@@ -46,6 +45,29 @@ def welcome_user():
                 return 'program'
 
 
+def program_type():
+    """
+    Function to ask the user what program type they would like to play
+    """
+    print('Enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data or type instructions if you would like to read the instructions.')
+    program_type = input()
+    if program_type == '1':
+        return 'type_one'
+    elif program_type == '2':
+        return 'type_two'
+    elif program_type == 'instructions':
+        return 'instructions'
+    else:
+         while program_type != '1' or '2' or 'instructions':
+            print('Please enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data or type instructions if you would like to read the instructions.')
+            next_input = input()
+            if program_type == '1':
+                return 'type_one'
+            elif program_type == '2':
+                return 'type_two'
+            elif program_type == 'instructions':
+                return 'instructions'
+
 def instructions():
     """
     Function to teach the user about bianry searches and the program itself 
@@ -55,6 +77,13 @@ def instructions():
     create_separation()
     print('Instructions')
     create_separation()
+    print('Would you like to run this program y/n')
+    run_program = input()
+    if run_program == 'y':
+        main()
+    else:
+        print('Closing program')
+        exit()
 
 def get_list_length():
     """
@@ -111,6 +140,14 @@ def normal_iteration(created_list, random_selection):
     create_separation()
     return time_delta
             
+def program_one():
+    list_length = get_list_length()
+    list = create_ordered_list(list_length)
+    random_item = select_random(list)
+    time_delta_normal = normal_iteration(list, random_item)
+
+def program_two():
+    print('program two is not available yet')
 
 def main():
     """
@@ -118,13 +155,18 @@ def main():
     """
     direction = welcome_user()
     if direction == 'program':
-        list_length = get_list_length()
+        program_type_selection = program_type()
+        if program_type_selection == 'type_one':
+            type_selection = program_one()
+        elif program_type_selection == 'type_two':
+            type_selection = program_two()
+        else:
+            instructions()
     else:
         instructions()
-        list_length = get_list_length()
-    list = create_ordered_list(list_length)
-    random_item = select_random(list)
+        
 
-    time_delta_normal = normal_iteration(list, random_item)
+
+
 
 main()
