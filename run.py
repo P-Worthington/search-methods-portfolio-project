@@ -56,6 +56,10 @@ def instructions():
     create_separation()
 
 def get_list_length():
+    """
+    Function used to obtain the users desired list length between 100 and 1000000
+    will convert to int and assess if within the specified values
+    """
     print('Please input a list length integer between 100 (one hundred) and 1000000 (one million). Any floats will be rounded to the nearest whole number')
     list_request = input()
     list_request_num = int(round(float(list_request)))
@@ -75,15 +79,25 @@ def get_list_length():
                 break
 
 def create_separation():
+    """
+    Function used to display 3 rows of full stops in the console
+    Used to separate bulk pieces of text
+    """
     i = 1
     while i < 4:
         print("...............................................................")
         i += 1
 
-direction = welcome_user()
-if direction == 'program':
-    list_length = get_list_length()
-else:
-    instructions()
-    list_length = get_list_length()
-print(list_length)
+def main():
+    """
+    Main function used for the running of the program
+    """
+    direction = welcome_user()
+    if direction == 'program':
+        list_length = get_list_length()
+    else:
+        instructions()
+        list_length = get_list_length()
+    list = create_ordered_list(list_length)
+
+main()
