@@ -139,7 +139,23 @@ def normal_iteration(created_list, random_selection):
     print(f'The time taken to perform normal iteration is {time_delta} microseconds')
     create_separation()
     return time_delta
-            
+
+#to be added to program one once complete 
+def binary_search(list, random_item):
+    """
+    Function to iterate through a list using binary search
+    """
+    def inner_loop(list, random_item):
+        end_index = list[-1]
+        half = round(end_index / 2)
+        print(half)
+        if half == random_item:
+            return half
+        elif half < random_item:
+            #continue from here
+
+    inner_loop(list, random_item)
+    
 def program_one():
     list_length = get_list_length()
     list = create_ordered_list(list_length)
@@ -148,6 +164,7 @@ def program_one():
 
 def program_two():
     print('program two is not available yet')
+    main()
 
 def main():
     """
@@ -166,7 +183,6 @@ def main():
         instructions()
         
 
+x = binary_search([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22], 19)
 
-
-
-main()
+#main()
