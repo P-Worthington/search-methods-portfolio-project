@@ -28,22 +28,22 @@ def welcome_user():
     learn_or_play = input()
     if learn_or_play == 'y':
         print('Loading Instructions...')
-        instructions()
+        return 'intructions'
     elif learn_or_play == 'n':
         print('Loading Program...')
-        run_program()
+        return 'program'
     else:
         while learn_or_play != 'y' or 'n':
             print('Please enter the character y and press enter if you would like to learn more about binary search or the character n if you would like to run the program')
             next_input = input()
             if next_input == 'y':
                 print('Loading Instructions...')
-                instructions()
-                break
+                return 'intructions'
+                
             elif next_input == 'n':
                 print('Loading Program...')
-                run_program()
-                break
+                return 'program'
+
 
 def instructions():
     """
@@ -51,17 +51,39 @@ def instructions():
     will lead the user onto running the program and direct them to the readme file 
     if they want to learn further
     """
+    create_separation()
+    print('Instructions')
+    create_separation()
+
+def get_list_length():
+    print('Please input a list length integer between 100 (one hundred) and 1000000 (one million). Any floats will be rounded to the nearest whole number')
+    list_request = input()
+    list_request_num = int(round(float(list_request)))
+    
+    if list_request_num >= 100 and list_request_num <= 100000:
+        print(f'You entered {list_request_num}')
+        return list_request_num
+    else:
+        while list_request_num < 100 or list_request_num > 100000:
+            print('Please enter a number between 100 (one hundred) and 1000000 (one million)')
+            second_list_request = input()
+            second_list_request_num = int(round(float(second_list_request)))
+
+            if second_list_request_num >= 100 and second_list_request_num <= 100000:
+                print(f'You entered {second_list_request_num}')
+                return second_list_request_num
+                break
+
+def create_separation():
     i = 1
     while i < 4:
         print("...............................................................")
         i += 1
-    print('Instructions')
 
-def run_program():
-    print('Please input a list length number between 100 (one hundred) and 1000000 (one million)')
-    list_request = input()
-    list_request_num = int(list_request)
-    if list_request_num >= 100 and list_request_num <= 100000:
-        print(f'You entered {list_request_num}')
-
-welcome_user()
+direction = welcome_user()
+if direction == 'program':
+    list_length = get_list_length()
+else:
+    instructions()
+    list_length = get_list_length()
+print(list_length)
