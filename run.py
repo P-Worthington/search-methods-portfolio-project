@@ -92,8 +92,17 @@ def select_random(x):
     start = x[0]
     end = x[-1]
     random_list_item = random.randint(start, end)
+    print(f'program will be looking for {random_list_item}')
+    create_separation()
     return random_list_item
 
+def normal_iteration(created_list, random_selection):
+    """
+    Function to iterate through a list in the traditional fashion by looping from start to finish
+    """
+    for list_item in created_list:
+        if list_item == random_selection:
+            print('found it')
 
 def main():
     """
@@ -107,7 +116,8 @@ def main():
         list_length = get_list_length()
     list = create_ordered_list(list_length)
     random_item = select_random(list)
-    print(random_item)
+
+    normal_iteration(list, random_item)
 
 main()
 
