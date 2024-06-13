@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
+from datetime import datetime
 
 def create_ordered_list(list_length_request):
     """
@@ -64,16 +65,16 @@ def get_list_length():
     list_request = input()
     list_request_num = int(round(float(list_request)))
     
-    if list_request_num >= 100 and list_request_num <= 100000:
+    if list_request_num >= 100 and list_request_num <= 1000000:
         print(f'You entered {list_request_num}')
         return list_request_num
     else:
-        while list_request_num < 100 or list_request_num > 100000:
+        while list_request_num < 100 or list_request_num > 1000000:
             print('Please enter a number between 100 (one hundred) and 1000000 (one million)')
             second_list_request = input()
             second_list_request_num = int(round(float(second_list_request)))
 
-            if second_list_request_num >= 100 and second_list_request_num <= 100000:
+            if second_list_request_num >= 100 and second_list_request_num <= 1000000:
                 print(f'You entered {second_list_request_num}')
                 return second_list_request_num
                 break
@@ -100,9 +101,15 @@ def normal_iteration(created_list, random_selection):
     """
     Function to iterate through a list in the traditional fashion by looping from start to finish
     """
+    print('Performing normal iteration \n')
+    start = datetime.now().microsecond
     for list_item in created_list:
         if list_item == random_selection:
-            print('found it')
+            end = datetime.now().microsecond
+    time_delta = end - start
+    print(f'The time taken to perform this action is {time_delta} microseconds')
+    create_separation()
+            
 
 def main():
     """
@@ -120,4 +127,3 @@ def main():
     normal_iteration(list, random_item)
 
 main()
-
