@@ -140,35 +140,31 @@ def normal_iteration(created_list, random_selection):
     create_separation()
     return time_delta
 
-#to be added to program one once complete 
+def binary_search_loop(list, low, high, random_item):
+ 
+    if high >= low:
+ 
+        mid = (high + low) // 2
+ 
+        if list[mid] == random_item:
+            return mid
+        elif list[mid] > random_item:
+            return binary_search_loop(list, low, mid - 1, random_item)
+        else:
+            return binary_search_loop(list, mid + 1, high, random_item)
+    else:
+        return -1
+ 
 def binary_search(list, random_item):
-    """
-    Function to iterate through a list using binary search
-    """
+    
     print('Performing binary search \n')
-    end_index = list[-1]
-    half = round(end_index / 2)
-    print(half)
-    while half != random_item:
-        if half > random_item:
-            list = list[:half]
-            print(list)
-            new_end_index = list[-1]
-            half_lower = round(new_end_index / 2)
-            half = half_lower
-            print(half)
-            if half == random_item:
-                print('found item')
-
-        elif half < random_item:
-            list = list[half:]
-            print(list)
-            new_end_index = list[-1]
-            half_upper = round(new_end_index / 2)
-            half = half_upper
-            print(half)
-            if half == random_item:
-                print('found item')
+    start = datetime.now().microsecond
+    binary_search_loop(list, 0, len(list)-1, random_item)
+    end = datetime.now().microsecond
+    time_delta = end - start
+    print(f'The time taken to perform binary search is {time_delta} microseconds')
+    create_separation()
+    return time_delta
 
 
     
@@ -177,6 +173,7 @@ def program_one():
     list = create_ordered_list(list_length)
     random_item = select_random(list)
     time_delta_normal = normal_iteration(list, random_item)
+    time_delta_binary = binary_search(list, random_item)
 
 def program_two():
     print('program two is not available yet')
@@ -199,6 +196,6 @@ def main():
         instructions()
         
 
-x = binary_search([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22], 2)
+main()
 
-#main()
+
