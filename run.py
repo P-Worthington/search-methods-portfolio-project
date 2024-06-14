@@ -90,20 +90,20 @@ def get_list_length():
     Function used to obtain the users desired list length between 100 and 1000000
     will convert to int and assess if within the specified values
     """
-    print('Please input a list length integer between 100 (one hundred) and 1000000 (one million). Any floats will be rounded to the nearest whole number')
+    print('Please input a list length integer between 100 (one hundred) and 1000000000 (one billion). Any floats will be rounded to the nearest whole number')
     list_request = input()
     list_request_num = int(round(float(list_request)))
     
-    if list_request_num >= 100 and list_request_num <= 1000000:
+    if list_request_num >= 100 and list_request_num <= 1000000000:
         print(f'You entered {list_request_num}')
         return list_request_num
     else:
-        while list_request_num < 100 or list_request_num > 1000000:
-            print('Please enter a number between 100 (one hundred) and 1000000 (one million)')
+        while list_request_num < 100 or list_request_num > 1000000000:
+            print('Please enter a number between 100 (one hundred) and 1000000000 (one billion)')
             second_list_request = input()
             second_list_request_num = int(round(float(second_list_request)))
 
-            if second_list_request_num >= 100 and second_list_request_num <= 1000000:
+            if second_list_request_num >= 100 and second_list_request_num <= 1000000000:
                 print(f'You entered {second_list_request_num}')
                 return second_list_request_num
                 break
@@ -145,16 +145,32 @@ def binary_search(list, random_item):
     """
     Function to iterate through a list using binary search
     """
-    def inner_loop(list, random_item):
-        end_index = list[-1]
-        half = round(end_index / 2)
-        print(half)
-        if half == random_item:
-            return half
-        elif half < random_item:
-            #continue from here
+    print('Performing binary search \n')
+    end_index = list[-1]
+    half = round(end_index / 2)
+    print(half)
+    while half != random_item:
+        if half > random_item:
+            list = list[:half]
+            print(list)
+            new_end_index = list[-1]
+            half_lower = round(new_end_index / 2)
+            half = half_lower
+            print(half)
+            if half == random_item:
+                print('found item')
 
-    inner_loop(list, random_item)
+        elif half < random_item:
+            list = list[half:]
+            print(list)
+            new_end_index = list[-1]
+            half_upper = round(new_end_index / 2)
+            half = half_upper
+            print(half)
+            if half == random_item:
+                print('found item')
+
+
     
 def program_one():
     list_length = get_list_length()
@@ -183,6 +199,6 @@ def main():
         instructions()
         
 
-x = binary_search([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22], 19)
+x = binary_search([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22], 2)
 
 #main()
