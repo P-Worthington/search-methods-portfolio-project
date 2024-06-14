@@ -140,7 +140,7 @@ def normal_iteration(created_list, random_selection):
     time_delta = end - start
     print(f'The time taken to perform normal iteration is {time_delta} microseconds')
     create_separation()
-    return time_delta
+    return abs(time_delta)
 
 def binary_search_loop(list, low, high, random_item):
  
@@ -166,9 +166,21 @@ def binary_search(list, random_item):
     time_delta = end - start
     print(f'The time taken to perform binary search is {time_delta} microseconds')
     create_separation()
-    return time_delta
+    return abs(time_delta)
 
+def compare_time_delta (normal, binary):
+    time_taken = normal - binary
+    return time_taken
 
+def time_delta_realisation(time, list_length, random_item):
+    print(f'The time difference between binary search and normal iteration is {time} when searching a list made up of {list_length} items and a randomly selected search item of {random_item}')
+    create_separation
+    time_over_hnths = time * 100000
+    time_seconds = time_over_hnths * 0.0000001
+    time_min = time_seconds / 60
+    create_separation
+    print(f'Over 100000 iterations through the same list this would equate to {round(time_seconds, 2)} seconds or {round(time_min, 2)} minutes. rounded to two decimal places')
+    create_separation
     
 def program_one():
     list_length = get_list_length()
@@ -176,7 +188,8 @@ def program_one():
     random_item = select_random(list)
     time_delta_normal = normal_iteration(list, random_item)
     time_delta_binary = binary_search(list, random_item)
-    print('program1 complete')
+    time_taken = compare_time_delta(time_delta_normal, time_delta_binary)
+    result = time_delta_realisation(time_taken, list_length, random_item)
 
 def program_two():
     print('program two is not available yet')
