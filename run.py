@@ -87,23 +87,25 @@ def instructions():
 
 def get_list_length():
     """
-    Function used to obtain the users desired list length between 100 and 1000000
+    Function used to obtain the users desired list length between 100 and 10000000
     will convert to int and assess if within the specified values
     """
-    print('Please input a list length integer between 100 (one hundred) and 1000000000 (one billion). Any floats will be rounded to the nearest whole number')
+    print('Please input a list length integer between 100 (one hundred) and 10000000 (10 million). Any floats will be rounded to the nearest whole number')
     list_request = input()
     list_request_num = int(round(float(list_request)))
     
-    if list_request_num >= 100 and list_request_num <= 1000000000:
+    if list_request_num >= 100 and list_request_num <= 10000000:
         print(f'You entered {list_request_num}')
+        print('Standby program may take some time if iterating through a very large list (greater than 1 million)')
+        create_separation()
         return list_request_num
     else:
-        while list_request_num < 100 or list_request_num > 1000000000:
-            print('Please enter a number between 100 (one hundred) and 1000000000 (one billion)')
+        while list_request_num < 100 or list_request_num > 10000000:
+            print('Please enter a number between 100 (one hundred) and 10000000 (10 million)')
             second_list_request = input()
             second_list_request_num = int(round(float(second_list_request)))
 
-            if second_list_request_num >= 100 and second_list_request_num <= 1000000000:
+            if second_list_request_num >= 100 and second_list_request_num <= 10000000:
                 print(f'You entered {second_list_request_num}')
                 return second_list_request_num
                 break
@@ -174,6 +176,7 @@ def program_one():
     random_item = select_random(list)
     time_delta_normal = normal_iteration(list, random_item)
     time_delta_binary = binary_search(list, random_item)
+    print('program1 complete')
 
 def program_two():
     print('program two is not available yet')
