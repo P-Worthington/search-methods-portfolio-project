@@ -134,6 +134,7 @@ def get_list_length():
                 return second_list_request_num
                 break
 
+
 def create_separation():
     """
     Function used to display 3 rows of full stops in the console
@@ -276,8 +277,8 @@ def program_two():
     This function runs the operation of program 2 containing all of the functions required to provide the user with the
     intended output
     """
-    print('program two is not available yet')
-    main()
+    list_length = get_list_length()
+    list = create_ordered_list(list_length)
 
 def main():
     """
