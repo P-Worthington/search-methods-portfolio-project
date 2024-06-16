@@ -259,6 +259,8 @@ def normal_iteration_for_graph(list, list_length, interval):
             time_delta = end - start
         time_taken.append(time_delta)
         i += interval
+    print("Normal search complete")
+    create_separation()
     return time_taken
 
 def x_axis_generation(list, interval):
@@ -268,6 +270,22 @@ def x_axis_generation(list, interval):
     x_axis = list[0: -1: interval]
     return x_axis
 
+def binary_search_for_graph(list, list_length, interval):
+    result = []
+    i = 1
+    while i < list_length:
+        start = datetime.now().microsecond
+        binary_search_loop(list, 0, len(list)-1, i)
+        end = datetime.now().microsecond
+        if start > end:
+            time_delta = start - end
+        else:
+            time_delta = end - start
+        result.append(time_delta)
+        i += interval
+    print("Binary search complete")
+    create_separation()
+    return result
 
 
 def program_complete():
@@ -328,6 +346,11 @@ def program_two():
     interval = graph_interval(list_length)
     graph_result_normal = normal_iteration_for_graph(list, list_length, interval)
     x_axis_normal = x_axis_generation(list, interval)
+    graph_result_binary = binary_search_for_graph(list, list_length, interval)
+    print(graph_result_normal)
+    print(graph_result_binary)
+    program_complete()
+
 
 def main():
     """
@@ -346,8 +369,7 @@ def main():
         instructions()
         
 
-#main()
+main()
 
-program_two()
 
 
