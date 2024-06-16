@@ -224,6 +224,31 @@ def time_delta_realisation(time, list_length, random_item):
     print(f'Over 100000 iterations through the same list this would equate to {round(time_seconds, 2)} seconds or {round(time_min, 2)} minutes. Rounded to two decimal places')
     create_separation()
 
+def graph_interval(length):
+    """
+    Function used to calculate the most appropriate interval for x and y axis such that there are 
+    50 values on each axis 
+    """
+    interval = int(length) // 50
+    return interval
+
+def normal_iteration_for_graph(list, list_length, interval):
+    """
+    Function to control the operation of the normal iteration across the 50 intervals. 
+    """
+    time_delta_normal = []
+    i = 0
+    while i < list_length:
+        start = datetime.now().microsecond
+        for item in list:
+            if item == i:
+                break    
+            end = datetime.now().microsecond
+        time_delta = end - start
+        print(time_delta)
+        i += interval
+
+
 def program_complete():
     """
     Followingf the completion of program 1 and program 2 this function provides the user with options on
@@ -279,6 +304,8 @@ def program_two():
     """
     list_length = get_list_length()
     list = create_ordered_list(list_length)
+    interval = graph_interval(list_length)
+    graph_result = normal_iteration_for_graph(list, list_length, interval)
 
 def main():
     """
@@ -297,6 +324,8 @@ def main():
         instructions()
         
 
-main()
+#main()
+
+program_two()
 
 
