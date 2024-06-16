@@ -259,7 +259,15 @@ def normal_iteration_for_graph(list, list_length, interval):
             time_delta = end - start
         time_taken.append(time_delta)
         i += interval
-    print(time_taken)
+    return time_taken
+
+def x_axis_generation(list, interval):
+    """
+    Function to generate the the x axis data values
+    """
+    x_axis = list[0: -1: interval]
+    return x_axis
+
 
 
 def program_complete():
@@ -318,7 +326,8 @@ def program_two():
     list_length = get_list_length()
     list = create_ordered_list(list_length)
     interval = graph_interval(list_length)
-    graph_result = normal_iteration_for_graph(list, list_length, interval)
+    graph_result_normal = normal_iteration_for_graph(list, list_length, interval)
+    x_axis_normal = x_axis_generation(list, interval)
 
 def main():
     """
