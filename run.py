@@ -165,8 +165,13 @@ def normal_iteration(created_list, random_selection):
     start = datetime.now().microsecond
     for list_item in created_list:
         if list_item == random_selection:
-            end = datetime.now().microsecond
-    time_delta = end - start
+            break
+        end = datetime.now().microsecond
+    end = datetime.now().microsecond
+    if start > end:
+        time_delta = start - end
+    else:
+        time_delta = end - start
     print(f'The time taken to perform normal iteration is {time_delta} microseconds')
     create_separation()
     return abs(time_delta)
@@ -198,7 +203,10 @@ def binary_search(list, random_item):
     start = datetime.now().microsecond
     binary_search_loop(list, 0, len(list)-1, random_item)
     end = datetime.now().microsecond
-    time_delta = end - start
+    if start > end:
+        time_delta = start - end
+    else:
+        time_delta = end - start
     print(f'The time taken to perform binary search is {time_delta} microseconds')
     create_separation()
     return abs(time_delta)
@@ -237,16 +245,21 @@ def normal_iteration_for_graph(list, list_length, interval):
     Function to control the operation of the normal iteration across the 50 intervals. 
     """
     time_delta_normal = []
-    i = 0
+    i = 1
+    time_taken = []
     while i < list_length:
         start = datetime.now().microsecond
         for item in list:
             if item == i:
                 break    
-            end = datetime.now().microsecond
-        time_delta = end - start
-        print(time_delta)
+        end = datetime.now().microsecond
+        if start > end:
+            time_delta = start - end
+        else:
+            time_delta = end - start
+        time_taken.append(time_delta)
         i += interval
+    print(time_taken)
 
 
 def program_complete():
