@@ -57,12 +57,14 @@ def program_type():
     Program 2 takes a user specified list lengh and iterates through it normally and using binary search 
     for each of the items within the list. It provides the user with x and y data to plot the result on a graph
     """
-    print('Enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data or type instructions if you would like to read the instructions.')
+    print('Enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data on a single specified list length, enter the number 3 to use search methods to search for an item across multiple list lengths or type instructions if you would like to read the instructions.')
     program_type = input()
     if program_type == '1':
         return 'type_one'
     elif program_type == '2':
         return 'type_two'
+    elif program_type == '3':
+        return 'type_three'
     elif program_type == 'instructions':
         return 'instructions'
     else:
@@ -73,6 +75,8 @@ def program_type():
                 return 'type_one'
             elif program_type == '2':
                 return 'type_two'
+            elif user_selection == '3':
+                return 'type_three'
             elif program_type == 'instructions':
                 return 'instructions'
 
@@ -86,23 +90,28 @@ def instructions():
     print('Instructions') #to be completed
     create_separation()
     print('If you would like use Search Methods on a single user selected list length enter 1.')
-    print('If you would like to use use search methods to generate x and y data enter the number 2.') 
+    print('If you would like to use use search methods to generate x and y data from a single list length enter the number 2.') 
+    print('If you would like to use Search Methods to search for an item in different list lengths a provide the time taken enter the number 3.')
     print('Finally, if you would like to end this program type end into the console')
     user_selection = input()
     if user_selection == '1':
         program_one()
     elif user_selection == '2':
         program_two()
+    elif user_selection == '3':
+        program_three()
     elif user_selection == 'end':
         exit()
     else:
         while user_selection != '1' or '2' or 'instructions' or 'end': #loops if user provides unknown input
-            print('It seems like you have not entered a correct input. Please enter the number 1 to If you would like use Search Methods on a single user selected list length enter 1, if you would like to use use search methods to generate x and y data enter the number 2. Finally, if you would like to end this program type end into the console')
+            print('It seems like you have not entered a correct input. Please enter the number 1 to If you would like use Search Methods on a single user selected list length enter 1, if you would like to use use search methods to generate x and y data enter the number 2. If you would like to use Search Methods to search for an item in different list lengths a provide the time taken enter the number 3. Finally, if you would like to end this program type end into the console')
             second_user_input = input()
             if second_user_input == '1':
                 program_one()
             elif second_user_input == '2':
                 program_two()
+            elif user_selection == '3':
+                program_three()
             elif second_user_input == 'end':
                 exit()
 
@@ -310,26 +319,31 @@ def program_complete():
     print('Thank you for using search methods. I hope you found the result interesting and informative.')
     create_separation()
     print('If you would like use Search Methods on a single user selected list length enter 1.')
-    print('If you would like to use use search methods to generate x and y data enter the number 2.')
-    print('If you would like to read the again type instructions into the console.') 
+    print('If you would like to use use search methods to generate x and y data on a specific list length enter the number 2.')
+    print('If you would like search methods to search for an item within multiple list lengths enter the number 3')
+    print('If you would like to read the instructions again type instructions into the console.') 
     print('Finally, if you would like to end this program type end into the console')
     user_selection = input()
     if user_selection == '1':
         program_one()
     elif user_selection == '2':
         program_two()
+    elif user_selection == '3':
+        program_three()
     elif user_selection == 'instructions':
         instructions()
     elif user_selection == 'end':
         exit()
     else:
         while user_selection != '1' or '2' or 'instructions' or 'end':
-            print('It seems like you have not entered a correct input. Please enter the number 1 to If you would like use Search Methods on a single user selected list length enter 1, if you would like to use use search methods to generate x and y data enter the number 2. If you would like to read the instructions type instructions into the console. Finally, if you would like to end this program type end into the console')
+            print('It seems like you have not entered a correct input. Please enter the number 1 to If you would like use Search Methods on a single user selected list length enter 1, if you would like to use use search methods to generate x and y data enter the number 2. If you would like search methods to search for an item within multiple list lengths enter the number 3. If you would like to read the instructions type instructions into the console. Finally, if you would like to end this program type end into the console')
             second_user_input = input()
             if second_user_input == '1':
                 program_one()
             elif second_user_input == '2':
                 program_two()
+            elif user_selection == '3':
+                program_three()
             elif second_user_input == 'instructions':
                 instructions()
             elif second_user_input == 'end':
@@ -364,6 +378,10 @@ def program_two():
     program_two_results(graph_result_normal, graph_result_binary, list_length)
     program_complete()
 
+def program_three():
+    print('not availbale yet')
+    create_separation()
+    program_complete()
 
 def main():
     """
@@ -376,6 +394,8 @@ def main():
             type_selection = program_one()
         elif program_type_selection == 'type_two':
             type_selection = program_two()
+        elif program_type_selection == 'type_three':
+            type_selection = program_three()
         else:
             instructions()
     else:
