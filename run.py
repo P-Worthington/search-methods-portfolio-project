@@ -311,6 +311,72 @@ def program_two_results(normal, binary, length):
     create_separation()
     print(binary)
 
+def normal_iteration_prog_3(created_list, end_index):
+    """
+    Function to iterate through a list in the traditional fashion by looping from start to finish
+    """
+    start = datetime.now().microsecond
+    for list_item in created_list:
+        if list_item == end_index:
+            break
+        end = datetime.now().microsecond
+    end = datetime.now().microsecond
+    if start > end:
+        time_delta = start - end
+    else:
+        time_delta = end - start
+    return abs(time_delta)
+
+def prog_3_search_normal(list_length):
+    interval = graph_interval(list_length)
+    time_taken = [0]
+    i = interval
+    while i < list_length:
+        list = create_ordered_list(i)
+        end_index = list[-1:]
+        time_delta = normal_iteration_prog_3(list, end_index)
+        time_taken.append(time_delta)
+        i += interval
+    print(f'Below is the time taken to iterate through differeing list lengths from {interval} to {list_length} in intervals of {interval} using normal search')
+    create_separation()
+    print(time_taken)
+    return time_taken
+
+def binary_search_prog_3(list, random_item):
+    """
+    Function to set up binary_search_loops (above) and provide it with the 4 statments required
+    """
+    
+    start = datetime.now().microsecond
+    print(list)
+    print(len(list))
+    print(random_item)
+    binary_search_loop(list, 0, len(list)-1, random_item)
+    end = datetime.now().microsecond
+    if start > end:
+        time_delta = start - end
+    else:
+        time_delta = end - start
+    return abs(time_delta)
+
+def prog_3_search_binary(list_length):
+    """
+    Function
+    """
+    interval = graph_interval(list_length)
+    time_taken = [0]
+    i = interval
+    while i < list_length:
+        list = create_ordered_list(i)
+        end_index = list[-1:]
+        rime_delta = binary_search_prog_3(list, end_index)
+        time_taken.append(time_delta)
+        i += interval
+    create_separation()
+    print(f'Below is the time taken to iterate through differeing list lengths from {interval} to {list_length} in intervals of {interval} using binary search')
+    print(time_taken)
+    return time_taken
+
 def program_complete():
     """
     Followingf the completion of program 1 and program 2 this function provides the user with options on
@@ -349,6 +415,7 @@ def program_complete():
             elif second_user_input == 'end':
                 exit()
 
+
     
 def program_one():
     """
@@ -379,7 +446,10 @@ def program_two():
     program_complete()
 
 def program_three():
-    print('not availbale yet')
+    list_length = get_list_length()
+    time_dela_noraml = prog_3_search_normal(list_length)
+    time_delta_binary = prog_3_search_binary(list_length)
+
     create_separation()
     program_complete()
 
@@ -403,6 +473,5 @@ def main():
         
 
 main()
-
 
 
