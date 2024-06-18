@@ -287,6 +287,20 @@ def binary_search_for_graph(list, list_length, interval):
     create_separation()
     return result
 
+def program_two_results(normal, binary, length):
+    """
+    Function taking the two results from the search data and displaying them such that the user can read
+    tabulate the data
+    """
+    print(f'The below list contains 50 data points of the time it has taken to search for 50 different (but evenly) spaced index items within a list length of {length} by normal iteration through the list')
+    print('In shorter list lengths you should see the time taken is fairly steady but for long list lengths the time timen increases at roughly equal intervals.')
+    create_separation()
+    print(normal)
+    create_separation()
+    print(f'The below list contains 50 data points of the time it has taken to search for 50 different (but evenly) spaced index items within a list length of {length} using binary search')
+    print('Regardless of list length you should see the time taken remaining stetady regardless of the item searched for. In longer list lengths this should be significantly shorter than normal iteration')
+    create_separation()
+    print(binary)
 
 def program_complete():
     """
@@ -347,8 +361,7 @@ def program_two():
     graph_result_normal = normal_iteration_for_graph(list, list_length, interval)
     x_axis_normal = x_axis_generation(list, interval)
     graph_result_binary = binary_search_for_graph(list, list_length, interval)
-    print(graph_result_normal)
-    print(graph_result_binary)
+    program_two_results(graph_result_normal, graph_result_binary, list_length)
     program_complete()
 
 
