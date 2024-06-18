@@ -348,9 +348,6 @@ def binary_search_prog_3(list, random_item):
     """
     
     start = datetime.now().microsecond
-    print(list)
-    print(len(list))
-    print(random_item)
     binary_search_loop(list, 0, len(list)-1, random_item)
     end = datetime.now().microsecond
     if start > end:
