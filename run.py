@@ -366,11 +366,16 @@ def prog_3_search_binary(list_length):
     while i < list_length:
         list = create_ordered_list(i)
         end_index = list[-1:]
-        rime_delta = binary_search_prog_3(list, end_index)
+        string = str(end_index)
+        new_string = string.replace("[", "")
+        new_string_2 = new_string.replace("]", "")
+        integer = int(new_string_2)
+        time_delta = binary_search_prog_3(list, integer)
         time_taken.append(time_delta)
         i += interval
     create_separation()
     print(f'Below is the time taken to iterate through differeing list lengths from {interval} to {list_length} in intervals of {interval} using binary search')
+    create_separation()
     print(time_taken)
     return time_taken
 
