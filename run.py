@@ -93,7 +93,15 @@ def instructions():
     if they want to learn further
     """
     create_separation()
-    print('Instructions') #to be completed
+    print('Search Methods is a practical learning program which demonstrates the differences between normal iteration through a list and binary search in three unique ways.')
+    print('Normal iteration through a list is the simplest way for a computer to search a list. For example, if there was an ordered list of 100 items and the computer was asked to find 99 it would inspect index item 0 and check if it was equal to 99, if not it would then find index item 1 and continue this process until the search for item is located \n')
+    print('Binary search is best described by imagining a human searching in a dictionary. If the human was looking for the word "jester" they would likely not open the dictionary at page 1 and then 2 and so on. They would instead open the dictionary approximately half way through, say the letter "m". The human would know that the letter "m" comes after the letter "j" in the alphabet. They would then likely open a page between "a" and "m". This has effectively halved the "list" length. Computers can operate in this way to.\n')
+    print('This python project uses the datetime module at its core to time the computer performing normal iteration and binary search. The results are made availbale to yourself the user.')
+    create_separation()
+    print('Search Methods utilises three program types to search and provides the results.')
+    print('Program 1 - the simplest program that takes a user selected lsit length between 100 and 10000000 (10 million) identifies a random number to search for and times the computer searching. It provides the raw results in microseconds and also assess the difference over 100000 iterations to put the time difference into perspective. \n')
+    print('program 2 - this program works by taking a specified list length betwen 100 and 10000000 (10 million) and searches for 50 numbers within that specified list length normally and by binary search. It provides the time taken to perform the normal search as a list of 50 items and the time taken to perform the binary search as a list of 50 items. You can take this data and plot it within a graph. You should see that the time taken to perform the binary search is significantly lower. \n')
+    print('program3 - this program takes a user specified maximum list length and searches this lsit and 49 smaller lists identifed by taken the specified length and deividing it by 50. The program then searches for the maximum number (index item -1) it once again provides two lists of 50 items the first being normal search and the second being binary search. You should once again see a significant reduction in teh time taken using bianry search. You should also see the binary search data formaing a logorithmic pattern. This data can be taken and plotted in a graph. /n')
     create_separation()
     print('If you would like use Search Methods on a single user selected list length enter 1.')
     print('If you would like to use use search methods to generate x and y data from a single list length enter the number 2.') 
