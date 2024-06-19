@@ -417,7 +417,7 @@ def prog_3_search_binary(list_length):
         time_taken.append(time_delta)
         i += interval
     create_separation()
-    print(f'Below is the time taken to iterate through differeing list lengths from' 
+    print(f'Below is the time taken to iterate through differeing list lengths from') 
     print(f'{interval} to {list_length} in intervals of {interval} using binary search')
     create_separation()
     print(time_taken)
