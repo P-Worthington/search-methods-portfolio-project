@@ -37,7 +37,11 @@ A key goal of the creator was to create a program that would not end abruptly fo
 
 Exit points have also been created to allow for a safe exit of the program at certain points if the user no longer wishes to use this applicaiton. 
 
+## Results 
+From testing it appears that at all times results from the program agree with what is expected from the hypothesis. The results are consistent and do not appear to have any systemic errors arriving from poor methodology. 
 
+## Target audience 
+Search Methods is targeted towards young developers or mathmeticians that have an understanding of some aspects of software development. Its purpose is to test a hypothesis based on the theory that bianry search is a superior method to search through an ordered list. It is young developers that benefit most from learning about this way of searching. 
 
 Welcome,
 
