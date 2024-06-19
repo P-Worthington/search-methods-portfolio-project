@@ -23,7 +23,7 @@ def welcome_user():
     asked if they want to learn more about binary search and the function 
     of this program and if the user wants to use the program. 
     """
-    print('\n Hello welcome to Search Methods. \n')
+    print('Hello welcome to Search Methods. \n')
     print('If this is your first time using Search Methods it is recommended that you read the instructions. \n')
     print('Would you like to read the instructions? y/n')
     learn_or_play = input('\n')
@@ -58,7 +58,10 @@ def program_type():
     Program3 takes a user specifiec list length and searches the -1 index item of 50 shorter list lengths and provides
     the user with the results in a format that can be graphed 
     """
-    print('Enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data on a single specified list length, enter the number 3 to use search methods to search for an item across multiple list lengths or type instructions if you would like to read the instructions.')
+    print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
+    print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
+    print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n') 
+    print('type instructions if you would like to read the instructions.\n')
     program_type = input('\n')
     if program_type == '1':
         return 'type_one'
@@ -70,7 +73,10 @@ def program_type():
         return 'instructions'
     else:
          while program_type != '1' or '2' or 'instructions': #loops if user inputs unknown entry to console
-            print('Please enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data or type instructions if you would like to read the instructions.')
+            print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
+            print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
+            print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n') 
+            print('type instructions if you would like to read the instructions.\n')
             next_input = input('\n')
             if program_type == '1':
                 return 'type_one'
@@ -89,20 +95,21 @@ def instructions():
     if they want to learn further
     """
     create_separation()
-    print('Search Methods is a practical learning program which demonstrates the differences between normal iteration through a list and binary search in three unique ways. \n')
-    print('Normal iteration through a list is the simplest way for a computer to search a list. For example, if there was an ordered list of 100 items and the computer was asked to find 99 it would inspect index item 0 and check if it was equal to 99, if not it would then find index item 1 and continue this process until the search for item is located \n')
-    print('Binary search is best described by imagining a human searching in a dictionary. If the human was looking for the word "jester" they would likely not open the dictionary at page 1 and then 2 and so on. They would instead open the dictionary approximately half way through, say the letter "m". The human would know that the letter "m" comes after the letter "j" in the alphabet. They would then likely open a page between "a" and "m". This has effectively halved the "list" length. Computers can operate in this way to.\n')
-    print('This python project uses the datetime module at its core to time the computer performing normal iteration and binary search. The results are made availbale to yourself the user.')
+    print('Search Methods is a learning program which demonstrates the differences between normal iteration through a list and binary search. \n')
+    print('Normal iteration through a list starts at the first index item and moves through the list in order. \n')
+    print('Binary search splits the list an half and half again until the result is found. \n')
+    print('This python project uses the datetime module at its core to time the computer performing normal iteration and binary search. \n')
+    print('If you would like to learn more about this program please read the README.md file attached to the repositiory. ')
     create_separation()
     print('Search Methods utilises three program types to search and provides the results. \n')
-    print('Program 1 - the simplest program that takes a user selected lsit length between 100 and 10000000 (10 million) identifies a random number to search for and times the computer searching. It provides the raw results in microseconds and also assess the difference over 100000 iterations to put the time difference into perspective. \n')
-    print('Program 2 - this program works by taking a specified list length betwen 100 and 10000000 (10 million) and searches for 50 numbers within that specified list length normally and by binary search. It provides the time taken to perform the normal search as a list of 50 items and the time taken to perform the binary search as a list of 50 items. You can take this data and plot it within a graph. You should see that the time taken to perform the binary search is significantly lower. \n')
-    print('Program 3 - this program takes a user specified maximum list length and searches this lsit and 49 smaller lists identifed by taken the specified length and deividing it by 50. The program then searches for the maximum number (index item -1) it once again provides two lists of 50 items the first being normal search and the second being binary search. You should once again see a significant reduction in teh time taken using bianry search. You should also see the binary search data formaing a logorithmic pattern. This data can be taken and plotted in a graph. \n')
+    print('Program 1 - Takes a specified list and finds a random number within. \n')
+    print('Program 2 - Takes a specified list and searches for 50 numbers within that specific list. \n')
+    print('Program 3 - Takes a user specified list and searches for the last item in that list and 49 other list length. \n')
     create_separation()
-    print('If you would like use Search Methods on a single user selected list length enter 1.')
-    print('If you would like to use use search methods to generate x and y data from a single list length enter the number 2.') 
-    print('If you would like to use Search Methods to search for an item in different list lengths a provide the time taken enter the number 3.')
-    print('Finally, if you would like to end this program type end into the console')
+    print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
+    print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
+    print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n') 
+    print('If you would like to end this program type end into the console')
     user_selection = input('\n')
     if user_selection == '1':
         program_one()
@@ -114,7 +121,10 @@ def instructions():
         exit()
     else:
         while user_selection != '1' or '2' or 'instructions' or 'end': #loops if user provides unknown input
-            print('It seems like you have not entered a correct input. Please enter the number 1 to If you would like use Search Methods on a single user selected list length enter 1, if you would like to use use search methods to generate x and y data enter the number 2. If you would like to use Search Methods to search for an item in different list lengths a provide the time taken enter the number 3. Finally, if you would like to end this program type end into the console')
+            print('It seems like you have not entered a correct input.\n')
+            print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
+            print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
+            print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n') 
             second_user_input = input('\n')
             if second_user_input == '1':
                 program_one()
@@ -134,7 +144,8 @@ def get_list_length():
     10 million selected as a reasonable list length for program to run in a short time frame
     but also provide reaonable output
     """
-    print('Please input a list length integer between 100 (one hundred) and 10000000 (10 million). Any floats will be rounded to the nearest whole number')
+    print('Please input a list length integer between 100 (one hundred) and 10000000 (10 million).\n') 
+    print('Any floats will be rounded to the nearest whole number')
     list_request = input('\n')
     list_request_num = int(round(float(list_request)))
     
@@ -248,12 +259,15 @@ def time_delta_realisation(time, list_length, random_item):
     This function also coverts the microseconds into seconds and minutes to further demostrate the differences 
     in search methods
     """
-    print(f'The time difference between binary search and normal iteration is {time} when searching a list made up of {list_length} items and a randomly selected search item of {random_item}')
+    print(f'The time difference between binary search and normal iteration is {time}') 
+    print(f'when searching a list made up of {list_length} items')
+    print(f'and a randomly selected search item of {random_item}')
     create_separation()
     time_over_hnths = time * 100000
     time_seconds = time_over_hnths * 0.0000001
     time_min = time_seconds / 60
-    print(f'Over 100000 iterations through the same list this would equate to {round(time_seconds, 2)} seconds or {round(time_min, 2)} minutes. Rounded to two decimal places')
+    print(f'Over 100000 iterations through the same list this would equate to {round(time_seconds, 2)} seconds') 
+    print(f'or {round(time_min, 2)} minutes. Rounded to two decimal places')
     create_separation()
 
 #identifies interval size such that there are 50 data points
@@ -321,13 +335,13 @@ def program_two_results(normal, binary, length):
     Function taking the two results from the search data and displaying them such that the user can read
     tabulate the data
     """
-    print(f'The below list contains 50 data points of the time it has taken to search for 50 different (but evenly) spaced index items within a list length of {length} by normal iteration through the list')
-    print('In shorter list lengths you should see the time taken is fairly steady but for long list lengths the time timen increases at roughly equal intervals.')
+    print(f'The below list contains 50 data points of the time it has taken to search for 50 items') 
+    print(f'within a list length of {length} by normal iteration through the list')
     create_separation()
     print(normal)
     create_separation()
-    print(f'The below list contains 50 data points of the time it has taken to search for 50 different (but evenly) spaced index items within a list length of {length} using binary search')
-    print('Regardless of list length you should see the time taken remaining stetady regardless of the item searched for. In longer list lengths this should be significantly shorter than normal iteration')
+    print(f'The below list contains 50 data points of the time it has taken to search for 50 items')
+    print(f'within a list length of {length} using binary search')
     create_separation()
     print(binary)
 
@@ -362,7 +376,8 @@ def prog_3_search_normal(list_length):
         time_delta = normal_iteration_prog_3(list, end_index)
         time_taken.append(time_delta)
         i += interval
-    print(f'Below is the time taken to iterate through differeing list lengths from {interval} to {list_length} in intervals of {interval} using normal search')
+    print(f'Below is the time taken to iterate through differeing list lengths from')
+    print(f'{interval} to {list_length} in intervals of {interval} using normal search')
     create_separation()
     print(time_taken)
     return time_taken
@@ -402,7 +417,8 @@ def prog_3_search_binary(list_length):
         time_taken.append(time_delta)
         i += interval
     create_separation()
-    print(f'Below is the time taken to iterate through differeing list lengths from {interval} to {list_length} in intervals of {interval} using binary search')
+    print(f'Below is the time taken to iterate through differeing list lengths from' 
+    print(f'{interval} to {list_length} in intervals of {interval} using binary search')
     create_separation()
     print(time_taken)
     return time_taken
@@ -415,10 +431,9 @@ def program_complete():
     """
     print('Thank you for using search methods. I hope you found the result interesting and informative.')
     create_separation()
-    print('If you would like use Search Methods on a single user selected list length enter 1.')
-    print('If you would like to use use search methods to generate x and y data on a specific list length enter the number 2.')
-    print('If you would like search methods to search for an item within multiple list lengths enter the number 3')
-    print('If you would like to read the instructions again type instructions into the console.') 
+    print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
+    print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
+    print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n')
     print('Finally, if you would like to end this program type end into the console')
     user_selection = input('\n')
     if user_selection == '1':
@@ -433,7 +448,10 @@ def program_complete():
         exit()
     else:
         while user_selection != '1' or '2' or 'instructions' or 'end':
-            print('It seems like you have not entered a correct input. Please enter the number 1 to If you would like use Search Methods on a single user selected list length enter 1, if you would like to use use search methods to generate x and y data enter the number 2. If you would like search methods to search for an item within multiple list lengths enter the number 3. If you would like to read the instructions type instructions into the console. Finally, if you would like to end this program type end into the console')
+            print('It seems like you have not entered a correct input.')
+            print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
+            print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
+            print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n')
             second_user_input = input('\n')
             if second_user_input == '1':
                 program_one()
