@@ -160,10 +160,8 @@ def create_separation():
     Function used to display 3 rows of full stops in the console
     Used to separate bulk pieces of text
     """
-    i = 1
-    while i < 4:
-        print("...............................................................")
-        i += 1
+    print("...............................................................")
+
 
 #uses random module to select item
 def select_random(x):
