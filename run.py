@@ -1,7 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 #random module to select random number from list length
 import random
 #date time module to calculate time deltas between searches
@@ -30,7 +26,7 @@ def welcome_user():
     print('\n Hello welcome to Search Methods. \n')
     print('If this is your first time using Search Methods it is recommended that you read the instructions. \n')
     print('Would you like to read the instructions? y/n')
-    learn_or_play = input()
+    learn_or_play = input('\n')
     if learn_or_play == 'y':
         print('Loading Instructions...')
         return 'intructions'
@@ -40,7 +36,7 @@ def welcome_user():
     else:
         while learn_or_play != 'y' or 'n': #loops if user inputs unknown entry into console
             print('Please enter the character y and press enter if you would like to learn more about binary search or the character n if you would like to run the program')
-            next_input = input()
+            next_input = input('\n')
             if next_input == 'y':
                 print('Loading Instructions...')
                 return 'intructions'
@@ -59,11 +55,11 @@ def program_type():
     Program 2 takes a user specified list lengh and iterates through it normally and using binary search 
     for each of the items within the list. It provides the user with x and y data to plot the result on a graph
 
-    program3 takes a user specifiec list length and searches the -1 index item of 50 shorter list lengths and provides
+    Program3 takes a user specifiec list length and searches the -1 index item of 50 shorter list lengths and provides
     the user with the results in a format that can be graphed 
     """
     print('Enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data on a single specified list length, enter the number 3 to use search methods to search for an item across multiple list lengths or type instructions if you would like to read the instructions.')
-    program_type = input()
+    program_type = input('\n')
     if program_type == '1':
         return 'type_one'
     elif program_type == '2':
@@ -75,7 +71,7 @@ def program_type():
     else:
          while program_type != '1' or '2' or 'instructions': #loops if user inputs unknown entry to console
             print('Please enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data or type instructions if you would like to read the instructions.')
-            next_input = input()
+            next_input = input('\n')
             if program_type == '1':
                 return 'type_one'
             elif program_type == '2':
@@ -98,16 +94,16 @@ def instructions():
     print('Binary search is best described by imagining a human searching in a dictionary. If the human was looking for the word "jester" they would likely not open the dictionary at page 1 and then 2 and so on. They would instead open the dictionary approximately half way through, say the letter "m". The human would know that the letter "m" comes after the letter "j" in the alphabet. They would then likely open a page between "a" and "m". This has effectively halved the "list" length. Computers can operate in this way to.\n')
     print('This python project uses the datetime module at its core to time the computer performing normal iteration and binary search. The results are made availbale to yourself the user.')
     create_separation()
-    print('Search Methods utilises three program types to search and provides the results.')
+    print('Search Methods utilises three program types to search and provides the results. \n')
     print('Program 1 - the simplest program that takes a user selected lsit length between 100 and 10000000 (10 million) identifies a random number to search for and times the computer searching. It provides the raw results in microseconds and also assess the difference over 100000 iterations to put the time difference into perspective. \n')
-    print('program 2 - this program works by taking a specified list length betwen 100 and 10000000 (10 million) and searches for 50 numbers within that specified list length normally and by binary search. It provides the time taken to perform the normal search as a list of 50 items and the time taken to perform the binary search as a list of 50 items. You can take this data and plot it within a graph. You should see that the time taken to perform the binary search is significantly lower. \n')
-    print('program3 - this program takes a user specified maximum list length and searches this lsit and 49 smaller lists identifed by taken the specified length and deividing it by 50. The program then searches for the maximum number (index item -1) it once again provides two lists of 50 items the first being normal search and the second being binary search. You should once again see a significant reduction in teh time taken using bianry search. You should also see the binary search data formaing a logorithmic pattern. This data can be taken and plotted in a graph. /n')
+    print('Program 2 - this program works by taking a specified list length betwen 100 and 10000000 (10 million) and searches for 50 numbers within that specified list length normally and by binary search. It provides the time taken to perform the normal search as a list of 50 items and the time taken to perform the binary search as a list of 50 items. You can take this data and plot it within a graph. You should see that the time taken to perform the binary search is significantly lower. \n')
+    print('Program 3 - this program takes a user specified maximum list length and searches this lsit and 49 smaller lists identifed by taken the specified length and deividing it by 50. The program then searches for the maximum number (index item -1) it once again provides two lists of 50 items the first being normal search and the second being binary search. You should once again see a significant reduction in teh time taken using bianry search. You should also see the binary search data formaing a logorithmic pattern. This data can be taken and plotted in a graph. \n')
     create_separation()
     print('If you would like use Search Methods on a single user selected list length enter 1.')
     print('If you would like to use use search methods to generate x and y data from a single list length enter the number 2.') 
     print('If you would like to use Search Methods to search for an item in different list lengths a provide the time taken enter the number 3.')
     print('Finally, if you would like to end this program type end into the console')
-    user_selection = input()
+    user_selection = input('\n')
     if user_selection == '1':
         program_one()
     elif user_selection == '2':
@@ -119,7 +115,7 @@ def instructions():
     else:
         while user_selection != '1' or '2' or 'instructions' or 'end': #loops if user provides unknown input
             print('It seems like you have not entered a correct input. Please enter the number 1 to If you would like use Search Methods on a single user selected list length enter 1, if you would like to use use search methods to generate x and y data enter the number 2. If you would like to use Search Methods to search for an item in different list lengths a provide the time taken enter the number 3. Finally, if you would like to end this program type end into the console')
-            second_user_input = input()
+            second_user_input = input('\n')
             if second_user_input == '1':
                 program_one()
             elif second_user_input == '2':
@@ -139,7 +135,7 @@ def get_list_length():
     but also provide reaonable output
     """
     print('Please input a list length integer between 100 (one hundred) and 10000000 (10 million). Any floats will be rounded to the nearest whole number')
-    list_request = input()
+    list_request = input('\n')
     list_request_num = int(round(float(list_request)))
     
     if list_request_num >= 100 and list_request_num <= 10000000:
@@ -150,7 +146,7 @@ def get_list_length():
     else:
         while list_request_num < 100 or list_request_num > 10000000: #prevents user from inputing list length greater than or shorter than intended
             print('Please enter a number between 100 (one hundred) and 10000000 (10 million)')
-            second_list_request = input()
+            second_list_request = input('\n')
             second_list_request_num = int(round(float(second_list_request)))
 
             if second_list_request_num >= 100 and second_list_request_num <= 10000000:
@@ -426,7 +422,7 @@ def program_complete():
     print('If you would like search methods to search for an item within multiple list lengths enter the number 3')
     print('If you would like to read the instructions again type instructions into the console.') 
     print('Finally, if you would like to end this program type end into the console')
-    user_selection = input()
+    user_selection = input('\n')
     if user_selection == '1':
         program_one()
     elif user_selection == '2':
@@ -440,7 +436,7 @@ def program_complete():
     else:
         while user_selection != '1' or '2' or 'instructions' or 'end':
             print('It seems like you have not entered a correct input. Please enter the number 1 to If you would like use Search Methods on a single user selected list length enter 1, if you would like to use use search methods to generate x and y data enter the number 2. If you would like search methods to search for an item within multiple list lengths enter the number 3. If you would like to read the instructions type instructions into the console. Finally, if you would like to end this program type end into the console')
-            second_user_input = input()
+            second_user_input = input('\n')
             if second_user_input == '1':
                 program_one()
             elif second_user_input == '2':
