@@ -43,3 +43,4 @@ From testing it appears that at all times results from the program agree with wh
 ## Target audience 
 Search Methods is targeted towards young developers or mathmeticians that have an understanding of some aspects of software development. Its purpose is to test a hypothesis based on the theory that bianry search is a superior method to search through an ordered list. It is young developers that benefit most from learning about this way of searching. 
 
+## Deployment 
