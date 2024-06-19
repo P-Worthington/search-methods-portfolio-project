@@ -93,7 +93,7 @@ def instructions():
     if they want to learn further
     """
     create_separation()
-    print('Search Methods is a practical learning program which demonstrates the differences between normal iteration through a list and binary search in three unique ways.')
+    print('Search Methods is a practical learning program which demonstrates the differences between normal iteration through a list and binary search in three unique ways. \n')
     print('Normal iteration through a list is the simplest way for a computer to search a list. For example, if there was an ordered list of 100 items and the computer was asked to find 99 it would inspect index item 0 and check if it was equal to 99, if not it would then find index item 1 and continue this process until the search for item is located \n')
     print('Binary search is best described by imagining a human searching in a dictionary. If the human was looking for the word "jester" they would likely not open the dictionary at page 1 and then 2 and so on. They would instead open the dictionary approximately half way through, say the letter "m". The human would know that the letter "m" comes after the letter "j" in the alphabet. They would then likely open a page between "a" and "m". This has effectively halved the "list" length. Computers can operate in this way to.\n')
     print('This python project uses the datetime module at its core to time the computer performing normal iteration and binary search. The results are made availbale to yourself the user.')
