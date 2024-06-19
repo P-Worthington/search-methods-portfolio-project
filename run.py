@@ -7,6 +7,7 @@ import random
 #date time module to calculate time deltas between searches
 from datetime import datetime
 
+#creates list of integers based on inputs
 def create_ordered_list(list_length_request):
     """
     Function to create ordered list of numbers using a while loop based
@@ -15,10 +16,11 @@ def create_ordered_list(list_length_request):
     i = 1
     ordered_list = [] 
     while i < list_length_request + 1:
-        ordered_list.append(i)
-        i += 1
+        ordered_list.append(i) # add to ordered lsit
+        i += 1 # increases list length by 1 integer
     return ordered_list
 
+# Welcomes user and allows selection of program or instructions
 def welcome_user():
     """
     Function to run first on the console and welcome the user a quesiton is 
@@ -47,7 +49,7 @@ def welcome_user():
                 print('Loading Program...')
                 return 'program'
 
-
+# runs following the welcome_user() function and allos selection of program type 
 def program_type():
     """
     Function to ask the user what program type they would like to play.
@@ -56,6 +58,9 @@ def program_type():
 
     Program 2 takes a user specified list lengh and iterates through it normally and using binary search 
     for each of the items within the list. It provides the user with x and y data to plot the result on a graph
+
+    program3 takes a user specifiec list length and searches the -1 index item of 50 shorter list lengths and provides
+    the user with the results in a format that can be graphed 
     """
     print('Enter the number 1 to use Search Methods on a single user selected list length. Enter the number 2 to use Search Methods to generate x and y data on a single specified list length, enter the number 3 to use search methods to search for an item across multiple list lengths or type instructions if you would like to read the instructions.')
     program_type = input()
@@ -80,6 +85,7 @@ def program_type():
             elif program_type == 'instructions':
                 return 'instructions'
 
+#instructions for program type 
 def instructions():
     """
     Function to teach the user about bianry searches and the program itself 
@@ -115,6 +121,7 @@ def instructions():
             elif second_user_input == 'end':
                 exit()
 
+#asks user for the list length then would like th eprogram to run 
 def get_list_length():
     """
     Function used to obtain the users desired list length between 100 and 10000000
@@ -143,7 +150,7 @@ def get_list_length():
                 return second_list_request_num
                 break
 
-
+#separation between prints 
 def create_separation():
     """
     Function used to display 3 rows of full stops in the console
@@ -154,6 +161,7 @@ def create_separation():
         print("...............................................................")
         i += 1
 
+#uses random module to select item
 def select_random(x):
     """
     Function used to select a random list index number within the user specified list length. 
@@ -166,6 +174,7 @@ def select_random(x):
     create_separation()
     return random_list_item
 
+#searches a list one by one 
 def normal_iteration(created_list, random_selection):
     """
     Function to iterate through a list in the traditional fashion by looping from start to finish
@@ -185,6 +194,7 @@ def normal_iteration(created_list, random_selection):
     create_separation()
     return abs(time_delta)
 
+#searches a list in binary fashion
 def binary_search_loop(list, low, high, random_item):
     """
     Function to loop through the list and identify the searched for item
@@ -202,7 +212,8 @@ def binary_search_loop(list, low, high, random_item):
             return binary_search_loop(list, mid + 1, high, random_item)
     else:
         return -1
- 
+
+#provides the binary search with the 4 inputs reaquired
 def binary_search(list, random_item):
     """
     Function to set up binary_search_loops (above) and provide it with the 4 statments required
@@ -220,6 +231,7 @@ def binary_search(list, random_item):
     create_separation()
     return abs(time_delta)
 
+#compares time taken differences. 
 def compare_time_delta (normal, binary):
     """
     Function to calculate the time difference between normal iteration and binary search 
@@ -227,6 +239,7 @@ def compare_time_delta (normal, binary):
     time_taken = normal - binary
     return time_taken
 
+#used in conjuction with program 1 to put the data into perspective
 def time_delta_realisation(time, list_length, random_item):
     """
     Function used to take the time delta data and provide the user with feedback. 
@@ -241,6 +254,7 @@ def time_delta_realisation(time, list_length, random_item):
     print(f'Over 100000 iterations through the same list this would equate to {round(time_seconds, 2)} seconds or {round(time_min, 2)} minutes. Rounded to two decimal places')
     create_separation()
 
+#identifies interval size such that there are 50 data points
 def graph_interval(length):
     """
     Function used to calculate the most appropriate interval for x and y axis such that there are 
@@ -249,6 +263,7 @@ def graph_interval(length):
     interval = int(length) // 50
     return interval
 
+#iterates through a list length normally for program 2 
 def normal_iteration_for_graph(list, list_length, interval):
     """
     Function to control the operation of the normal iteration across the 50 intervals. 
@@ -272,6 +287,7 @@ def normal_iteration_for_graph(list, list_length, interval):
     create_separation()
     return time_taken
 
+# generates data for the x axis in program 2
 def x_axis_generation(list, interval):
     """
     Function to generate the the x axis data values
@@ -279,6 +295,7 @@ def x_axis_generation(list, interval):
     x_axis = list[0: -1: interval]
     return x_axis
 
+# searches in binary fashion for program 2 
 def binary_search_for_graph(list, list_length, interval):
     result = []
     i = 1
@@ -296,6 +313,7 @@ def binary_search_for_graph(list, list_length, interval):
     create_separation()
     return result
 
+# presents the reuslt from program 2 to the user 
 def program_two_results(normal, binary, length):
     """
     Function taking the two results from the search data and displaying them such that the user can read
@@ -311,6 +329,7 @@ def program_two_results(normal, binary, length):
     create_separation()
     print(binary)
 
+#searches in normal fashion in conjuction with program 3 
 def normal_iteration_prog_3(created_list, end_index):
     """
     Function to iterate through a list in the traditional fashion by looping from start to finish
@@ -327,7 +346,11 @@ def normal_iteration_prog_3(created_list, end_index):
         time_delta = end - start
     return abs(time_delta)
 
+# loops through normal_interation_prog_3() 
 def prog_3_search_normal(list_length):
+    """
+    Loops through normal iteration program 3 (above function) using the interval size
+    """
     interval = graph_interval(list_length)
     time_taken = [0]
     i = interval
@@ -342,9 +365,11 @@ def prog_3_search_normal(list_length):
     print(time_taken)
     return time_taken
 
+# loops different list lengths and provides them to the binary search function 
 def binary_search_prog_3(list, random_item):
     """
     Function to set up binary_search_loops (above) and provide it with the 4 statments required
+    used in conjuction with program 3 
     """
     
     start = datetime.now().microsecond
@@ -356,9 +381,10 @@ def binary_search_prog_3(list, random_item):
         time_delta = end - start
     return abs(time_delta)
 
+# preps the data types for the above function such that binary search can be performed
 def prog_3_search_binary(list_length):
     """
-    Function
+    Function to set up the correct data types on each list length to perform binary search
     """
     interval = graph_interval(list_length)
     time_taken = [0]
@@ -379,6 +405,7 @@ def prog_3_search_binary(list_length):
     print(time_taken)
     return time_taken
 
+# function to run when users chosen program is complete and allows user to continue running results or end program
 def program_complete():
     """
     Followingf the completion of program 1 and program 2 this function provides the user with options on
@@ -418,7 +445,7 @@ def program_complete():
                 exit()
 
 
-    
+ # main function to run the operation of program 1    
 def program_one():
     """
     This function runs the operation of program 1 containing all of the functions required to provide the user with the
@@ -433,6 +460,7 @@ def program_one():
     result = time_delta_realisation(time_taken, list_length, random_item)
     program_complete()
 
+#main function to run the operation of program 2 
 def program_two():
     """
     This function runs the operation of program 2 containing all of the functions required to provide the user with the
@@ -447,14 +475,15 @@ def program_two():
     program_two_results(graph_result_normal, graph_result_binary, list_length)
     program_complete()
 
+#main program to run the function of program 3 
 def program_three():
     list_length = get_list_length()
     time_dela_noraml = prog_3_search_normal(list_length)
     time_delta_binary = prog_3_search_binary(list_length)
-
     create_separation()
     program_complete()
 
+#,main function for running of program 
 def main():
     """
     Main function used for the running of the program
@@ -473,7 +502,7 @@ def main():
     else:
         instructions()
         
-
+#function call for main program
 main()
 
 
