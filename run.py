@@ -23,8 +23,10 @@ def welcome_user():
     asked if they want to learn more about binary search and the function 
     of this program and if the user wants to use the program. 
     """
+    create_separation()
     print('Hello welcome to Search Methods. \n')
     print('If this is your first time using Search Methods it is recommended that you read the instructions. \n')
+    create_separation()
     print('Would you like to read the instructions? y/n')
     learn_or_play = input('\n')
     if learn_or_play == 'y':
@@ -171,7 +173,7 @@ def create_separation():
     Function used to display 3 rows of full stops in the console
     Used to separate bulk pieces of text
     """
-    print("..................................................................................")
+    print("................................................................................")
 
 
 #uses random module to select item
