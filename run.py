@@ -149,23 +149,28 @@ def get_list_length():
     print('Please input a list length integer between 100 (one hundred) and 10000000 \n (10 million).\n') 
     print('Any floats will be rounded to the nearest whole number')
     list_request = input('\n')
-    list_request_num = int(round(float(list_request)))
-    
-    if list_request_num >= 100 and list_request_num <= 10000000:
-        print(f'You entered {list_request_num}')
-        print('Standby program may take some time if iterating through a very large list \n (greater than 1 million)')
-        create_separation()
-        return list_request_num
-    else:
-        while list_request_num < 100 or list_request_num > 10000000: #prevents user from inputing list length greater than or shorter than intended
-            print('Please enter a number between 100 (one hundred) and 10000000 (10 million)')
-            second_list_request = input('\n')
-            second_list_request_num = int(round(float(second_list_request)))
+    try:
+        list_request_num = int(round(float(list_request)))
+        if list_request_num >= 100 and list_request_num <= 10000000:
+            print(f'You entered {list_request_num}')
+            print('Standby program may take some time if iterating through a very large list \n (greater than 1 million)')
+            create_separation()
+            return list_request_num
+        else:
+            while list_request_num < 100 or list_request_num > 10000000: #prevents user from inputing list length greater than or shorter than intended
+                print('Please enter a number between 100 (one hundred) and 10000000 (10 million)')
+                second_list_request = input('\n')
+                second_list_request_num = int(round(float(second_list_request)))
 
-            if second_list_request_num >= 100 and second_list_request_num <= 10000000:
-                print(f'You entered {second_list_request_num}')
-                return second_list_request_num
-                break
+                if second_list_request_num >= 100 and second_list_request_num <= 10000000:
+                    print(f'You entered {second_list_request_num}')
+                    return second_list_request_num
+                    break
+    except:
+        print('You must enter a number')
+        exit()
+    
+
 
 #separation between prints 
 def create_separation():
