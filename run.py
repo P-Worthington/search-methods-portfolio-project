@@ -122,7 +122,7 @@ def instructions():
     elif user_selection == 'end':
         exit()
     else:
-        while user_selection != '1' or '2' or 'instructions' or 'end': #loops if user provides unknown input
+        while user_selection != '1' or '2' or '3' or 'instructions' or 'end': #loops if user provides unknown input
             print('It seems like you have not entered a correct input.\n')
             print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
             print('Enter the number 2 to use Search Methods to generate x and y data on a \n single specified list length.\n') 
