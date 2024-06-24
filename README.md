@@ -3,6 +3,7 @@
 
 Search methods is a practical learning program that demonstrates the differences between normal iteration through a list and binary search. The program itself runs in three ways that the user selects. It was clear from research that both the software developing and mathematical community agree that searching an ordered list in a binary way is superior in terms of speed. This program was initially created to test this hypothesis on a practical platform that can be manipulated by the user. Once consistent results were obtained that agree with the hypothesis and the rest of the developer community it was chosen by the creator to provide these results to young developers or mathematicians in three easy to understand outputs in order to demonstrate the benefits of using binary searches in their own programs.
 
+<img src="assets/images/sm-home.jpg">
 
 ## Normal Search
 Normal iteration through a list is the simplest way for a computer to search a list. For example, if there was an ordered list of 100 items and the computer was asked to find 99 it would inspect index item 0 and check if it was equal to 99, if not it would then find index item 1 and continue this process until the search for item is located.
