@@ -24,7 +24,21 @@ def welcome_user():
     of this program and if the user wants to use the program. 
     """
     create_separation()
-    print('Hello welcome to Search Methods. \n')
+    print("""
+                ______     ______     ______     ______     ______     __  __              
+            /\  ___\   /\  ___\   /\  __ \   /\  == \   /\  ___\   /\ \_\ \             
+            \ \___  \  \ \  __\   \ \  __ \  \ \  __<   \ \ \____  \ \  __ \            
+            \/\_____\  \ \_____\  \ \_\ \_\  \ \_\ \_\  \ \_____\  \ \_\ \_\           
+            \/_____/   \/_____/   \/_/\/_/   \/_/ /_/   \/_____/   \/_/\/_/           
+                                                                                        
+            __    __     ______     ______   __  __     ______     _____     ______    
+            /\ "-./  \   /\  ___\   /\__  _\ /\ \_\ \   /\  __ \   /\  __-.  /\  ___\   
+            \ \ \-./\ \  \ \  __\   \/_/\ \/ \ \  __ \  \ \ \/\ \  \ \ \/\ \ \ \___  \  
+            \ \_\ \ \_\  \ \_____\    \ \_\  \ \_\ \_\  \ \_____\  \ \____-  \/\_____\ 
+            \/_/  \/_/   \/_____/     \/_/   \/_/\/_/   \/_____/   \/____/   \/_____/ 
+                                                                            
+    """)
+    print('\n')
     print('If this is your first time using Search Methods it is recommended that you read the instructions. \n')
     create_separation()
     print('Would you like to read the instructions? y/n')
