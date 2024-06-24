@@ -25,6 +25,8 @@ def welcome_user():
     """
     create_separation()
     print("""
+
+    
         ███████╗███████╗ █████╗ ██████╗  ██████╗██╗  ██╗             
         ██╔════╝██╔════╝██╔══██╗██╔══██╗██╔════╝██║  ██║             
         ███████╗█████╗  ███████║██████╔╝██║     ███████║             
@@ -39,7 +41,6 @@ def welcome_user():
         ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
                                                                                                       
     """)
-    print('\n')
     print('If this is your first time using Search Methods it is recommended that you read the instructions. \n')
     create_separation()
     print('Would you like to read the instructions? y/n')
