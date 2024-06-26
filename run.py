@@ -24,6 +24,9 @@ def welcome_user():
     of this program and if the user wants to use the program. 
     """
     create_separation()
+    """
+    ASCII banner from https://manytools.org/hacker-tools/ascii-banner/
+    """
     print("""
 
     
@@ -162,9 +165,7 @@ def get_list_length():
     10 million selected as a reasonable list length for program to run in a short time frame
     but also provide reaonable output
     """
-    print('Please input a list length integer between 100 (one hundred) and 10000000 \n (10 million).\n') 
-    print('Any floats will be rounded to the nearest whole number')
-    list_request = input('\n')
+
     while True:
         try:
             print('Please input a list length integer between 100 (one hundred) and 10000000 \n (10 million).\n') 
