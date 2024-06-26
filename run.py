@@ -81,34 +81,38 @@ def program_type():
     the user with the results in a format that can be graphed 
     """
     print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
-    print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
-    print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n') 
-    print('type instructions if you would like to read the instructions.\n')
-    program_type = input('\n')
-    #passed to main function and decides on program type
-    if program_type == '1':
-        return 'type_one' #program 1
-    elif program_type == '2':
-        return 'type_two' # program 2
-    elif program_type == '3':
-        return 'type_three' # program 3
-    elif program_type == 'instructions':
-        return 'instructions'
+    print('Enter the number 2 to use Search Methods to generate x and y data on a single \n specified list length.\n') 
+    print('enter the number 3 to use search methods to search for an item across multiple \n list lengths or:\n')
+    print('Finally, if you would like to end this program type end into the console')
+    user_selection = input('\n')
+    if user_selection == '1':
+        program_one()
+    elif user_selection == '2':
+        program_two()
+    elif user_selection == '3':
+        program_three()
+    elif user_selection == 'instructions':
+        instructions()
+    elif user_selection == 'end':
+        exit()
+    #prevents user from inputting unknown input
     else:
-         while program_type != '1' or '2' or 'instructions': #loops if user inputs unknown entry to console
+        while user_selection != '1' or '2' or 'instructions' or 'end':
+            print('It seems like you have not entered a correct input.')
             print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
             print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
-            print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n') 
-            print('type instructions if you would like to read the instructions.\n')
-            next_input = input('\n')
-            if program_type == '1':
-                return 'type_one'
-            elif program_type == '2':
-                return 'type_two'
+            print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n')
+            second_user_input = input('\n')
+            if second_user_input == '1':
+                program_one()
+            elif second_user_input == '2':
+                program_two()
             elif user_selection == '3':
-                return 'type_three'
-            elif program_type == 'instructions':
-                return 'instructions'
+                program_three()
+            elif second_user_input == 'instructions':
+                instructions()
+            elif second_user_input == 'end':
+                exit() #safely exits program
 
 #instructions for program type 
 def instructions():
