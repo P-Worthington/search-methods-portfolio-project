@@ -5,6 +5,11 @@ Search methods is a practical learning program that demonstrates the differences
 
 <img src="assets/images/sm-home.jpg">
 
+## Instructions
+Search Methods provides instructions to the user if requested to do so. This provides the user with details of how the program operates and what is is expected of the user. 
+
+<img src="assets/images/sm_instructions.jpg>
+
 ## Normal Search
 Normal iteration through a list is the simplest way for a computer to search a list. For example, if there was an ordered list of 100 items and the computer was asked to find 99 it would inspect index item 0 and check if it was equal to 99, if not it would then find index item 1 and continue this process until the search for item is located.
 
@@ -20,14 +25,17 @@ As mentioned the Search Methods python command line application can be used to r
 ### Program One
 Program 1 - the simplest program that takes a user selected list length between 100 and 10000000 (10 million) identifies a random number to search for and times the computer searching. It provides the raw results in microseconds and also assesses the difference over 100000 iterations to put the time difference into perspective.
 
+<img src="assets/images/sm_prog_1.jpg>
 
 ### Program Two
 Program 2 - this program works by taking a specified list length between 100 and 10000000 (10 million) and searches for 50 numbers within that specified list length normally and by binary search. It provides the time taken to perform the normal search as a list of 50 items and the time taken to perform the binary search as a list of 50 items. You can take this data and plot it within a graph. You should see that the time taken to perform the binary search is significantly lower.
 
+<img src="assets/images/sm_prog_2.jpg>
 
 ### Program Three
 Program 3 - this program takes a user specified maximum list length and searches this list and 49 smaller lists identified by taking the specified length and dividing it by 50. The program then searches for the maximum number (index item -1) it once again provides two lists of 50 items the first being normal search and the second being binary search. You should once again see a significant reduction in the time taken using binary search. You should also see the binary search data forming a logarithmic pattern. This data can be taken and plotted in a graph.
 
+<img src="assets/images/sm_prog_3.jpg>
 
 ## Core Concepts
 This project uses many different aspects of python. Loops and searches are used extensively as well as appending lists to provide the test lists and the list supplied to the user following the program. There are however certain key concepts that are mentioned below that are fundamental to the operation of this program.
