@@ -19,11 +19,11 @@ def create_ordered_list(list_length_request):
 # Welcomes user and allows selection of program or instructions
 def welcome_user():
     """
-    Function to run first on the console and welcome the user a quesiton is 
+    Function to run first on the console and welcome the user a question is 
     asked if they want to learn more about binary search and the function 
     of this program and if the user wants to use the program. 
     """
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     """
     ASCII banner from https://manytools.org/hacker-tools/ascii-banner/
     """
@@ -45,12 +45,12 @@ def welcome_user():
                                                                                                       
     """)
     print('If this is your first time using Search Methods it is recommended that you read the instructions. \n')
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     print('Would you like to read the instructions? y/n')
     learn_or_play = input('\n') #takes user input for instructions
     if learn_or_play == 'y':
         print('Loading Instructions...')
-        return 'intructions' #passed to the main function to decide users program type
+        return 'instructions' #passed to the main function to decide users program type
     elif learn_or_play == 'n':
         print('Loading Program...')
         return 'program' #passed to the main function to decide users program type
@@ -61,23 +61,23 @@ def welcome_user():
             next_input = input('\n')
             if next_input == 'y':
                 print('Loading Instructions...')
-                return 'intructions'
+                return 'instructions'
                 
             elif next_input == 'n':
                 print('Loading Program...')
                 return 'program'
 
-# runs following the welcome_user() function and allos selection of program type 
+# runs following the welcome_user() function and allows selection of program type 
 def program_type():
     """
     Function to ask the user what program type they would like to play.
     Program 1 is using search methods to iterate through a user specified list length for a random number
     and provides the time delta between the two methods.
 
-    Program 2 takes a user specified list lengh and iterates through it normally and using binary search 
+    Program 2 takes a user specified list length and iterates through it normally and using binary search 
     for each of the items within the list. It provides the user with x and y data to plot the result on a graph
 
-    Program3 takes a user specifiec list length and searches the -1 index item of 50 shorter list lengths and provides
+    Program3 takes a user specific list length and searches the -1 index item of 50 shorter list lengths and provides
     the user with the results in a format that can be graphed 
     """
     print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
@@ -113,17 +113,17 @@ def program_type():
 #instructions for program type 
 def instructions():
     """
-    Function to teach the user about bianry searches and the program itself 
+    Function to teach the user about binary searches and the program itself 
     will lead the user onto running the program and direct them to the readme file 
     if they want to learn further
     """
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     #informs user about overall concept of search methods
     print('Search Methods is a learning program which demonstrates the differences between normal iteration through a list and binary search. \n')
     print('Normal iteration through a list starts at the first index item and moves through the list in order. \n')
     print('Binary search splits the list an half and half again until the result is found. \n')
     print('This python project uses the datetime module at its core to time the computer \n performing normal iteration and binary search. \n')
-    print('If you would like to learn more about this program please read the README.md \n file attached to the repositiory. ')
+    print('If you would like to learn more about this program please read the README.md \n file attached to the repository. ')
     create_separation()
     #describs the three program types
     print('Search Methods utilises three program types to search and provides the results. \n')
@@ -169,9 +169,9 @@ def get_list_length():
     will convert to int and assess if within the specified values
 
     10 million selected as a reasonable list length for program to run in a short time frame
-    but also provide reaonable output
+    but also provide reasonable output
     """
-    #user input will always be treated as string. Neccessary to establish if the user input 
+    #user input will always be treated as string. Necessary to establish if the user input 
     #can be converted to integer
     while True:
         #will loop if none numeric value detected
@@ -188,7 +188,7 @@ def get_list_length():
     if list_request_num >= 100 and list_request_num <= 10000000:
         print(f'You entered {list_request_num}')
         print('Standby program may take some time if iterating through a very large list \n (greater than 1 million)')
-        create_separation() #adds one line of fullstops to terminal to separate output
+        create_separation() #adds one line of full stops to terminal to separate output
         return list_request_num
     else:
         while list_request_num < 100 or list_request_num > 10000000: #prevents user from inputing list length greater than or shorter than intended
@@ -221,7 +221,7 @@ def select_random(x):
     end = x[-1] #end index item
     random_list_item = random.randint(start, end)
     print(f'program will be looking for {random_list_item}')
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     return random_list_item
 
 #searches a list one by one 
@@ -243,7 +243,7 @@ def normal_iteration(created_list, random_selection):
     else:
         time_delta = end - start
     print(f'The time taken to perform normal iteration is {time_delta} microseconds')
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     return abs(time_delta)
 
 #searches a list in binary fashion
@@ -262,7 +262,7 @@ def binary_search_loop(list, low, high, random_item):
     else:
         return -1
 
-#provides the binary search with the 4 inputs reaquired
+#provides the binary search with the 4 inputs required
 def binary_search(list, random_item):
     """
     Function to set up binary_search_loops (above) and provide it with the 4 statments required
@@ -289,17 +289,17 @@ def compare_time_delta (normal, binary):
     time_taken = normal - binary
     return time_taken
 
-#used in conjuction with program 1 to put the data into perspective
+#used in conjunction with program 1 to put the data into perspective
 def time_delta_realisation(time, list_length, random_item):
     """
     Function used to take the time delta data and provide the user with feedback. 
-    This function also coverts the microseconds into seconds and minutes to further demostrate the differences 
+    This function also coverts the microseconds into seconds and minutes to further demonstrate the differences 
     in search methods
     """
     print(f'The time difference between binary search and normal iteration is {time}') #time difference in microseconds
     print(f'when searching a list made up of {list_length} items') #user list length
     print(f'and a randomly selected search item of {random_item}') # random item
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     time_over_hnths = time * 100000 #time taken over one hundred thousand 100000 iterations in microseconds
     time_seconds = time_over_hnths * 0.0000001 # time taken in seconds
     time_min = time_seconds / 60 #time in minutes
@@ -362,7 +362,7 @@ def binary_search_for_graph(list, list_length, interval):
             time_delta = end - start
         result.append(time_delta) #adds time taken to empty list
         i += interval #increases searched for item by interval amount
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     return result #result is a list of 50 items
 
 # presents the reuslt from program 2 to the user 
@@ -373,7 +373,7 @@ def program_two_results(normal, binary, length):
     """
     print(f'The below list contains 50 data points of the time it has taken to search \n for 50 items') 
     print(f'within a list length of {length} by normal iteration through the list')
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     print(normal) #list of 50 times taken to search for 50 different items with lsit length
     create_separation()
     print(f'The below list contains 50 data points of the time it has taken to search \n for 50 items')
@@ -381,7 +381,7 @@ def program_two_results(normal, binary, length):
     create_separation()
     print(binary) #list of 50 times taken to search for 50 different items with lsit length
 
-#searches in normal fashion in conjuction with program 3 
+#searches in normal fashion in conjunction with program 3 
 def normal_iteration_prog_3(created_list, end_index):
     """
     Function to iterate through a list in the traditional fashion by looping from start to finish
@@ -396,7 +396,7 @@ def normal_iteration_prog_3(created_list, end_index):
         time_delta = start - end
     else:
         time_delta = end - start
-    return abs(time_delta) #time taken to perfrom binary search
+    return abs(time_delta) #time taken to perform binary search
 
 # loops through normal_interation_prog_3() 
 def prog_3_search_normal(list_length):
@@ -412,9 +412,9 @@ def prog_3_search_normal(list_length):
         time_delta = normal_iteration_prog_3(list, end_index)
         time_taken.append(time_delta)
         i += interval #increases list length by interval
-    print(f'Below is the time taken to iterate through differeing list lengths from')
+    print(f'Below is the time taken to iterate through differing list lengths from')
     print(f'{interval} to {list_length} in intervals of {interval} using normal search')
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     print(time_taken)
     return time_taken
 
@@ -422,7 +422,7 @@ def prog_3_search_normal(list_length):
 def binary_search_prog_3(list, random_item):
     """
     Function to set up binary_search_loops (above) and provide it with the 4 statments required
-    used in conjuction with program 3 
+    used in conjunction with program 3 
     """
     
     start = datetime.now().microsecond
@@ -447,13 +447,13 @@ def prog_3_search_binary(list_length):
         end_index = list[-1:]
         string = str(end_index)
         new_string = string.replace("[", "") #removes bracket
-        new_string_2 = new_string.replace("]", "")#removes braket
+        new_string_2 = new_string.replace("]", "")#removes bracket
         integer = int(new_string_2) #turns value to integer so binary search can be performed
         time_delta = binary_search_prog_3(list, integer)
         time_taken.append(time_delta) # adds to time delta
         i += interval # increases list length by interval
-    create_separation() #adds one line of fullstops to terminal to separate output
-    print(f'Below is the time taken to iterate through differeing list lengths from') 
+    create_separation() #adds one line of full stops to terminal to separate output
+    print(f'Below is the time taken to iterate through differing list lengths from') 
     print(f'{interval} to {list_length} in intervals of {interval} using binary search')
     create_separation()
     print(time_taken)
@@ -462,11 +462,11 @@ def prog_3_search_binary(list_length):
 # function to run when users chosen program is complete and allows user to continue running results or end program
 def program_complete():
     """
-    Followingf the completion of program 1 and program 2 this function provides the user with options on
+    Following the completion of program 1 and program 2 this function provides the user with options on
     running program1 or 2 again, reading the instructions or ending the program
     """
     print('Thank you for using search methods. I hope you found the result interesting and informative.')
-    create_separation() #adds one line of fullstops to terminal to separate output
+    create_separation() #adds one line of full stops to terminal to separate output
     print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
     print('Enter the number 2 to use Search Methods to generate x and y data on a single \n specified list length.\n') 
     print('enter the number 3 to use search methods to search for an item across multiple \n list lengths or:\n')
@@ -482,7 +482,7 @@ def program_complete():
         instructions()
     elif user_selection == 'end':
         exit()
-    #prevents user from inputing unknown input
+    #prevents user from inputting unknown input
     else:
         while user_selection != '1' or '2' or 'instructions' or 'end':
             print('It seems like you have not entered a correct input.')
@@ -545,7 +545,7 @@ def main():
     """
     Main function used for the running of the program
     """
-    direction = welcome_user() #first function to run displays ASCII banner and asks if user wants to read isntructions
+    direction = welcome_user() #first function to run displays ASCII banner and asks if user wants to read instructions
     if direction == 'program':
         program_type_selection = program_type()
         if program_type_selection == 'type_one': #runs program 1 function
@@ -561,5 +561,4 @@ def main():
         
 #function call for main program
 main()
-
 
