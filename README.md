@@ -74,6 +74,11 @@ Many of the printed statements were shortened to only include crucial data. This
 ## Future Considerations
 Whilst it is beyond the scope of this project, using the search methods program in conjunction with a front-end web application that can take the data from the user, perform the operation and then supply a graph readout would be highly beneficial to a user so they can see visually the data and the time taken to perform the commands.
 
+## Testing
+Testing was done using: https://extendsclass.com/python-tester.html
+
+This resulted in no errors detected throughout the document. 
+
 ## References 
 
 ### ASCII Banner 
