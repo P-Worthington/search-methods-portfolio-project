@@ -82,7 +82,8 @@ def program_type():
     """
     print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
     print('Enter the number 2 to use Search Methods to generate x and y data on a single \n specified list length.\n') 
-    print('enter the number 3 to use search methods to search for an item across multiple \n list lengths or:\n')
+    print('Enter the number 3 to use search methods to search for an item across multiple \n list lengths or:\n')
+    print('Enter the word instructions to see the instructions \n')
     print('Finally, if you would like to end this program type end into the console')
     user_selection = input('\n')
     if user_selection == '1':
@@ -102,6 +103,8 @@ def program_type():
             print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
             print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
             print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n')
+            print('Enter the word instructions to see the instructions \n')
+            print('Finally, if you would like to end this program type end into the console')
             second_user_input = input('\n')
             if second_user_input == '1':
                 program_one()
@@ -155,7 +158,8 @@ def instructions():
             print('It seems like you have not entered a correct input.\n')
             print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
             print('Enter the number 2 to use Search Methods to generate x and y data on a \n single specified list length.\n') 
-            print('enter the number 3 to use search methods to search for an item across \n multiple list lengths or:\n') 
+            print('enter the number 3 to use search methods to search for an item across \n multiple list lengths or:\n')
+            print('If you would like to end this program type end into the console')
             second_user_input = input('\n')
             if second_user_input == '1':
                 program_one()
@@ -474,6 +478,7 @@ def program_complete():
     print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
     print('Enter the number 2 to use Search Methods to generate x and y data on a single \n specified list length.\n') 
     print('enter the number 3 to use search methods to search for an item across multiple \n list lengths or:\n')
+    print('Enter the word instructions to see the instructions \n')
     print('Finally, if you would like to end this program type end into the console')
     user_selection = input('\n')
     if user_selection == '1':
@@ -493,6 +498,8 @@ def program_complete():
             print('Enter the number 1 to use Search Methods on a single user selected list length.\n')
             print('Enter the number 2 to use Search Methods to generate x and y data on a single specified list length.\n') 
             print('enter the number 3 to use search methods to search for an item across multiple list lengths or:\n')
+            print('Enter the word instructions to see the instructions \n')
+            print('Finally, if you would like to end this program type end into the console')
             second_user_input = input('\n')
             if second_user_input == '1':
                 program_one()
